@@ -24,17 +24,19 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $servicesArray = [
+            'user',
+            'dictionaries/status'
+        ];
+
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
 
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+        $this->routes(function () use ($servicesArray) {
+            foreach ($servicesArray as $service) {
+                Route::prefix('api')->middleware('api')->group(base_path("routes/{$service}.php"));
+            }
         });
     }
 }
