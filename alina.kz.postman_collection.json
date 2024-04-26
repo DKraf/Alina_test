@@ -1,0 +1,2222 @@
+{
+	"info": {
+		"_postman_id": "ef69b8ca-a97f-48f2-a42d-eb54ee48a2f7",
+		"name": "alina.kz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17377437"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "LOGIN user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+77011111111",
+									"description": "string/required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1q2w3e4r5t",
+									"description": "string/required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/user/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+77714724530",
+											"description": "string/required",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1q2w3e4r5t6",
+											"description": "string/required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/user/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jun 2023 19:16:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Пользователь c указанным номером не найден\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+77714724530",
+											"description": "string/required",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1q2w3e4r5t6y",
+											"description": "string/required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/user/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jun 2023 19:16:53 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"token\": \"13|89eOj3Lw2ijk09xO7Xdw7tluu2dLWYh3WFGvuAMA\",\n        \"role\": null\n    },\n    \"meta\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGOUT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|pdl5jEGTHWIt4X6RDpUpc46msSwvjfj0WF2hOBd43ea3e72a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+77011111111",
+									"description": "string/required",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "1q2w3e4r5t",
+									"description": "string/required",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/user/logout",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+77714724530",
+											"description": "string/required",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1q2w3e4r5t6",
+											"description": "string/required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/user/logout",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jun 2023 19:16:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Ошибка аутентификации пользователя\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+77714724530",
+											"description": "string/required",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1q2w3e4r5t6y",
+											"description": "string/required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/user/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jun 2023 19:16:53 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"token\": \"13|89eOj3Lw2ijk09xO7Xdw7tluu2dLWYh3WFGvuAMA\",\n        \"role\": null\n    },\n    \"meta\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "CREATE User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+77714724530",
+									"description": "string/required/mask (+71231231212)",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1q2w3e4r5t6y",
+									"description": "string/required/min 6",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dkraf9006@gmail.com",
+									"description": "string/no required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "dmitriy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/user/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+77714724530",
+											"description": "string/required/mask (+71231231212)",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1q2w3e4r5t6y",
+											"description": "string/required/min 6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "Dmitriy",
+											"description": "string/required",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "Kravchenko",
+											"description": "string/required",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "iin",
+											"value": "12345678912",
+											"description": "int/required/max 12",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "dkraf9006@gmail.com",
+											"description": "string/no required",
+											"type": "text"
+										},
+										{
+											"key": "patronymic",
+											"value": "by Leonid",
+											"description": "string/no required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/user/create",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jun 2023 19:19:13 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Этот номер уже зарегестрирован!\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+77777777777",
+											"description": "string/required/mask (+71231231212)",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1q2w3e4r5t6y",
+											"description": "string/required/min 6",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "Vasya",
+											"description": "string/required",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Pupkin",
+											"description": "string/required",
+											"type": "text"
+										},
+										{
+											"key": "iin",
+											"value": "12345678912",
+											"description": "int/required/max 12",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mail@gmail.com",
+											"description": "string/no required",
+											"type": "text"
+										},
+										{
+											"key": "patronymic",
+											"value": "by roddom",
+											"description": "string/no required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/user/create",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Jun 2023 19:20:10 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"user_id\": 2\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "dictionaries",
+			"item": [
+				{
+					"name": "statuses",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/status",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"status"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{local}}/api/status",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"api",
+												"status"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Apr 2024 09:29:26 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Apr 2024 09:29:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Новый\",\n            \"description\": \"Новая задача\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"В работе\",\n            \"description\": \"Задача в процессе выполнеия\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Закрыт\",\n            \"description\": \"Завершенная задача\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Новый\",\n            \"description\": \"Новая задача\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"В работе\",\n            \"description\": \"Задача в процессе выполнеия\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Закрыт\",\n            \"description\": \"Завершенная задача\"\n        }\n    ],\n    \"meta\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "priority",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/priority",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"priority"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{local}}/api/priority",
+											"host": [
+												"{{local}}"
+											],
+											"path": [
+												"api",
+												"priority"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Apr 2024 09:24:33 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Apr 2024 09:24:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Низкий\",\n            \"priority\": 10\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Высокий\",\n            \"priority\": 10\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Средний\",\n            \"priority\": 50\n        }\n    ],\n    \"meta\": null\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|CKn5sIFXHMbwtgCaMuxiTAIBWjck3wDqC2bPJG5Yef94d9b5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "priority_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello world",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Head",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/task",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"task"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:19:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:19:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"task_id\": 1\n    },\n    \"meta\": null\n}"
+						},
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:20:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:20:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": {\n        \"status_id\": [\n            \"The selected status id is invalid.\"\n        ]\n    },\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|CKn5sIFXHMbwtgCaMuxiTAIBWjck3wDqC2bPJG5Yef94d9b5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "priority_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello world",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Head",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/task",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"task"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task/1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:19:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:19:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"task_id\": 1\n    },\n    \"meta\": null\n}"
+						},
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task/12",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"12"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:20:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:20:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"задачи не сущевствует\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "LIST",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|CKn5sIFXHMbwtgCaMuxiTAIBWjck3wDqC2bPJG5Yef94d9b5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "priority_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello world",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Head",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/task?status=1&sort=DESC",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"task"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:20:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:20:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": {\n        \"status_id\": [\n            \"The selected status id is invalid.\"\n        ]\n    },\n    \"data\": null\n}"
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:35:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:35:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"user_name\": \"dmitriy\",\n            \"status\": \"Новый\",\n            \"priority\": \"Низкий\",\n            \"name\": \"Head\",\n            \"description\": \"hello world\",\n            \"created_at\": \"2024-04-26 10:19:55\",\n            \"updated_at\": \"2024-04-26 10:19:55\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"user_name\": \"dmitriy\",\n            \"status\": \"В работе\",\n            \"priority\": \"Средний\",\n            \"name\": \"Head\",\n            \"description\": \"1213123 world\",\n            \"created_at\": \"2024-04-26 10:36:04\",\n            \"updated_at\": \"2024-04-26 10:36:04\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 2,\n        \"per_page\": 30,\n        \"current_page\": 1,\n        \"last_page\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "READ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|CKn5sIFXHMbwtgCaMuxiTAIBWjck3wDqC2bPJG5Yef94d9b5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "priority_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello world",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Head",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/task/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"1"
+							],
+							"query": [
+								{
+									"key": "priority",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task/1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"1"
+									],
+									"query": [
+										{
+											"key": "priority",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:58:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:58:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"user_name\": \"dmitriy\",\n        \"status\": \"Новый\",\n        \"priority\": \"Низкий\",\n        \"name\": \"Head\",\n        \"description\": \"hello world\",\n        \"created_at\": \"2024-04-26 10:19:55\",\n        \"updated_at\": \"2024-04-26 10:19:55\"\n    },\n    \"meta\": null\n}"
+						},
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task/12",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"12"
+									],
+									"query": [
+										{
+											"key": "priority",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 11:03:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 11:03:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"ID не найден\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|CKn5sIFXHMbwtgCaMuxiTAIBWjck3wDqC2bPJG5Yef94d9b5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "priority_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hello world",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Head",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/task/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"1"
+							],
+							"query": [
+								{
+									"key": "priority",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task/1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"1"
+									],
+									"query": [
+										{
+											"key": "priority",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:58:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 10:58:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": null,\n    \"data\": {\n        \"task_id\": 1\n    },\n    \"meta\": null\n}"
+						},
+						{
+							"name": "ERROR",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "priority_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "hello world",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Head",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/task/12",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"task",
+										"12"
+									],
+									"query": [
+										{
+											"key": "priority",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 11:04:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Apr 2024 11:04:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Задача с указаным ID не найдена\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "local",
+			"type": "string"
+		}
+	]
+}
