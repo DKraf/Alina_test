@@ -20,7 +20,6 @@ return new class extends Migration
                 ->onDelete('CASCADE');
             $table->string('name')->nullable();
             $table->string('description')->nullable();
-            $table->string('name')->nullable();
             $table->foreignId('priority_id')
                 ->nullable()
                 ->constrained('dictionaries_priority')

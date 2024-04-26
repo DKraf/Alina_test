@@ -25,7 +25,6 @@ class AuthController extends Controller
     public function login(LoginRequest $request, AuthService $authService): JsonResponse
     {
         try {
-
             return $this->success($authService->login($request));
 
         } catch (\Exception $e) {

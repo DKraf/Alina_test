@@ -39,12 +39,12 @@ class AuthService
         }
 
         $tokens = $user->tokens;
+
         foreach ($tokens as $token) {
             $token->delete();
         }
         return array (
             'token' => $user->createToken($user->phone)->plainTextToken,
-            'role'  => $user->getRoleNames()->first() ?? null
         );
     }
 
