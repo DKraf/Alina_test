@@ -22,18 +22,17 @@ class AuthService
      * @return array
      * @throws \Exception
      */
-    public function login(LoginRequest $request): array
+    public function login(array $request): array
     {
-        $inData = $request->getSanitized();
-        $inData['phone'] = Phone::formatPhone($inData['phone']);
+        $request['phone'] = Phone::formatPhone($request['phone']);
 
-        $user = User::where('phone', $inData['phone'])->first();
+        $user = User::where('phone', $request['phone'])->first();
 
         if (!$user){
 
             throw new \Exception('Пользователь c указанным номером не найден', 401);
 
-        } elseif(!Hash::check($inData['password'], $user->password) ){
+        } elseif(!Hash::check($request['password'], $user->password) ){
 
             throw new \Exception('Неверный пароль', 401);
         }

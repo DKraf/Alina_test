@@ -24,7 +24,7 @@ class AuthController extends Controller
      */
     public function login(LoginRequest $request, AuthService $authService): JsonResponse
     {
-        return $this->success($authService->login($request));
+        return $this->success($authService->login($request->getSanitized()));
     }
 
 

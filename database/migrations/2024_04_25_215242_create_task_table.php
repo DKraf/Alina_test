@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')
                 ->nullable()
-                ->constrained('dictionaries_status')
+                ->constrained('users')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
             $table->foreignId('status_id')
