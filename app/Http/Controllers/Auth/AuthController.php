@@ -11,66 +11,41 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Services\Auth\AuthService;
 use Illuminate\Http\JsonResponse;
+use libphonenumber\NumberParseException;
 
 
 class AuthController extends Controller
 {
     /**
-     * Метод авторизации Пользователя
-     *
      * @param LoginRequest $request
      * @param AuthService $authService
      * @return JsonResponse
+     * @throws \Exception
      */
     public function login(LoginRequest $request, AuthService $authService): JsonResponse
     {
-        try {
-            return $this->success($authService->login($request));
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 400);
-
-        }
+        return $this->success($authService->login($request));
     }
 
 
     /**
-     * Метод Логаут (выхода) с ЛК
-     *
      * @param AuthService $authService
      * @return JsonResponse
+     * @throws \Exception
      */
     public function logout (AuthService $authService): JsonResponse
     {
-        try {
-
-            return $this->success($authService->logout());
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
+        return $this->success($authService->logout());
     }
 
     /**
-     * Метод создания нового пользователя
-     *
      * @param AuthService $authService
      * @param RegisterRequest $request
      * @return JsonResponse
+     * @throws NumberParseException
      */
     public function create(AuthService $authService, RegisterRequest $request): JsonResponse
     {
-        try {
-
-            return $this->success($authService->create($request));
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
+        return $this->success($authService->create($request));
     }
 }

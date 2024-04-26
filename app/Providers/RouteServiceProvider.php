@@ -26,7 +26,10 @@ class RouteServiceProvider extends ServiceProvider
     {
         $servicesArray = [
             'user',
-            'dictionaries/status'
+            'task',
+            'dictionaries/status',
+            'dictionaries/priority'
+
         ];
 
         RateLimiter::for('api', function (Request $request) {

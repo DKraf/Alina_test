@@ -6,10 +6,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\News\CreateNewsRequest;
-use App\Http\Requests\News\UpdateNewsRequest;
-use App\Http\Resources\News\NewsResource;
-use App\Services\NewsService;
+use App\Http\Requests\Task\CreateTaskRequest;
+use App\Http\Requests\Task\UpdateTaskRequest;
+use App\Http\Resources\Task\TaskResource;
+use App\Services\TasksService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -17,138 +17,62 @@ use Illuminate\Http\Request;
 class TasksController extends Controller
 {
     /**
-     * Метод создания новой новости CRM
-     *
-     * @param TasksService $newsService
-     * @param CreateNewsRequest $request
+     * @param TasksService $taskService
+     * @param CreateTaskRequest $request
      * @return JsonResponse
      */
-    public function create(TasksService  $newsService, CreateNewsRequest $request): JsonResponse
+    public function create(TasksService  $taskService, CreateTaskRequest $request): JsonResponse
     {
-        try {
-
-            return $this->success($newsService->create($request));
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
+        return $this->success($taskService->create($request));
     }
 
 
     /**
-     * Метод получения списка новостей для CRM
-     *
-     * @param TasksService $newsService
+     * @param TasksService $taskService
      * @param Request $request
      * @return JsonResponse
      */
-    public function list(TasksService $newsService, Request $request): JsonResponse
+    public function list(TasksService $taskService, Request $request): JsonResponse
     {
-        try {
-
-            $news = $newsService->list($request);
-            return $this->success(
-                NewsResource::collection($news),
-                $this->getPaginateValue($news)
-            );
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
-    }
-
-    /**
-     * Метод получения карточки новости для CRM
-     *
-     * @param NewsService $newsService
-     * @param int $newsId
-     * @return JsonResponse
-     */
-    public function read(NewsService $newsService, int $newsId): JsonResponse
-    {
-        try {
-
-            return $this->success(new NewsResource($newsService->read($newsId)));
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() ,  404);
-
-        }
+        $tasks = $taskService->list($request);
+        return $this->success(TaskResource::collection($tasks), $this->getPaginateValue($tasks));
     }
 
 
     /**
-     * Метод редактирования новости CRM
-     *
-     * @param NewsService $newsService
-     * @param UpdateNewsRequest $request
-     * @param $newsId
+     * @param TasksService $taskService
+     * @param int $taskId
      * @return JsonResponse
+     * @throws \Exception
      */
-    public function update(
-        NewsService $newsService,
-        UpdateNewsRequest $request,
-        $newsId
-    ): JsonResponse
+    public function read(TasksService $taskService, int $taskId): JsonResponse
     {
-        try {
-
-            return $this->success($newsService->update($request, $newsId));
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
-    }
-
-    /**
-     * Метод удаления новости CRM
-     *
-     * @param NewsService $newsService
-     * @param $newsId
-     * @return JsonResponse
-     */
-    public function delete(NewsService $newsService, $newsId): JsonResponse
-    {
-        try {
-
-            return $this->success($newsService->delete($newsId));
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
+        return $this->success(new TaskResource($taskService->read($taskId)));
     }
 
 
     /**
-     * Метод получения списка новостей
-     *
-     * @param NewsService $newsService
-     * @param Request $request
+     * @param TasksService $taskService
+     * @param UpdateTaskRequest $request
+     * @param $taskId
      * @return JsonResponse
+     * @throws \Exception
      */
-    public function onlyActive(NewsService $newsService, Request $request): JsonResponse
+    public function update(TasksService $taskService, UpdateTaskRequest $request, $taskId): JsonResponse
     {
-        try {
-
-            $news = $newsService->onlyActive($request);
-            return $this->success(
-                NewsResource::collection($news),
-                $this->getPaginateValue($news)
-            );
-
-        } catch (\Exception $e) {
-
-            return $this->error($e->getMessage() , 502);
-
-        }
+        return $this->success($taskService->update($request, $taskId));
     }
+
+
+    /**
+     * @param TasksService $taskService
+     * @param $taskId
+     * @return JsonResponse
+     * @throws \Exception
+     */
+    public function delete(TasksService $taskService, $taskId): JsonResponse
+    {
+        return $this->success($taskService->delete($taskId));
+    }
+
 }

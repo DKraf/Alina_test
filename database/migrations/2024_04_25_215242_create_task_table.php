@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('task', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->nullable()
+                ->constrained('dictionaries_status')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
             $table->foreignId('status_id')
                 ->nullable()
                 ->constrained('dictionaries_status')

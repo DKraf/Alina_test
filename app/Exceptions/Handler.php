@@ -51,9 +51,6 @@ class Handler extends ExceptionHandler
         if ($e instanceof \Illuminate\Auth\AuthenticationException) {
             return $this->error('Пользователь не Авторизован.', 401);
         }
-        if ($e instanceof UnauthorizedException) {
-            return $this->error($e->getMessage(), 401);
-        }
 
         if ($e instanceof NotFoundHttpException) {
             return $this->error( 'Страница не найдена', 404);
@@ -63,16 +60,17 @@ class Handler extends ExceptionHandler
             return $this->error( 'Ошибка авторизации', 401);
         }
 
-//        if ($e instanceof CommunicationException) {
-//            return response()->json(['message' => $e->getMessage()], 500);
-//        }
-
         if ($e instanceof QueryException) {
             return $this->error( $e->getMessage(), 500);
         }
 
         if ($e instanceof ValidationException) {
             return response()->json(['status' => false, 'message' => $e->errors(), 'data' => null ], 400);
+        }
+
+        if ($e instanceof \Exception) {
+            return response()->json(['status' => false, 'message' => $e->getMessage(), 'data' => null ], 400);
+
         }
 
         return parent::render($request, $e);
