@@ -24,4 +24,3 @@ package-lock.json
 .DS_Store
 /docker-data/.DS_Store
 /docker/local/nginx/nginx.conf
-docker-compose.yml
