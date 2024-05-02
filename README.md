@@ -12,32 +12,30 @@ alina.kz.postman_collection.json
 - Задачи
 
 
-Проект можно запустить двумя методами через Docker и через artisan serveё
+Проект можно запустить двумя методами через Docker 
 
-переименовть .env.example -> .env
+1) переименовть .env.example -> .env
 
-1) Для запуска docker
+2) Для запуска docker
 
 - docker-compose build
 - docker-compose up
 
-внутри контейнера запустить
+после того как сбилдится окружение в терминале прописать следующие команды
 
-php artisan migrate
-php artisan db:seed
+- docker-compose exec app php artisan key:generate
 
-composer update
+после того как получим сообщение о том что ключ приложения успешно сгенерирован нужно ввести в терминале
 
+- docker-compose exec app php artisan migrate
 
-2) через artisan serve
+после успешного выполнения операции по миграции таблиц в БД , требуется заполнить справочники первичными данными 
+для этого в терминал нужно ввести следующую команду
 
-предварительно настроить Базу данных 
+- docker-compose exec app php artisan db:seed
 
-в терминале прописать 
+Все готово! приложение досупо по адресу: 
 
-php artisan migrate
-php artisan db:seed
+http://project.loc
 
-php artisan serve
-
-
+можно проверять реализованный функционал в postman
