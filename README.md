@@ -36,6 +36,6 @@ alina.kz.postman_collection.json
 
 Все готово! приложение досупо по адресу: 
 
-http://project.loc
+http://localhost
 
 можно проверять реализованный функционал в postman
